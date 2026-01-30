@@ -1,11 +1,11 @@
 { pkgs, lib, ... }:
 {
   imports = [ ./settings.nix ];
-  #TODO 独立vscode环境 
-  home.packages = with pkgs; [
-    nixd
-    nixfmt
-  ];
+  #TODO 独立vscode环境
+  # home.packages = with pkgs; [
+  #   nixd
+  #   nixfmt
+  # ];
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
