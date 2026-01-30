@@ -21,17 +21,20 @@
           };
           "options" = {
             "nixos" = {
-              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").nixosConfigurations.<name>.options";
+              "expr" = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.nixos.options";
             };
             "home-manager" = {
-              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
+              "expr" = "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.xiaot_evo.options";
             };
-            "nix-darwin" = {
-              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").darwinConfigurations.<name>.options";
-            };
+            # "nix-darwin" = {
+            #   "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").darwinConfigurations.<name>.options";
+            # };
           };
         };
       };
+      "nix.hiddenLanguageServerErrors" = [
+        "textDocument/definition"
+      ];
       ## VSCodeVim
       "vim.easymotion" = true;
       "vim.incsearch" = true;
