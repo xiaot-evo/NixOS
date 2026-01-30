@@ -49,7 +49,3 @@ sudo nixos-rebuild switch --flake .#<host>
 
 **许可证**
 此仓库采用 MIT 许可证（如果需要其他许可，请根据需求修改）。
-
----
-
-如果你希望我根据仓库内的具体模块或主机配置（例如 `hosts/laptop-acer` 或 `modules/home/programs/default.nix`）把 README 调整得更详尽，我可以基于这些文件生成更定制化的说明。查看本文件： [README.md](README.md)
