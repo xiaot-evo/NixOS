@@ -14,6 +14,7 @@
       github.copilot-chat
       vscodevim.vim
       jnoortheen.nix-ide
+      mkhl.direnv
       christian-kohler.path-intellisense
       vscode-icons-team.vscode-icons
       gruntfuggly.todo-tree

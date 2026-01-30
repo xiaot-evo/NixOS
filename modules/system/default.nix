@@ -6,7 +6,7 @@
 
     # ./desktop/gnome
     ./desktop/niri
-    ./apps
+    ./programs
   ];
   # TODO 重构目录结构
 }

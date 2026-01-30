@@ -7,10 +7,9 @@
     ./vscode
     ./ghostty.nix
     ./zen-browser.nix
-    # ./zed-editor.nix
     ./fish.nix
     ./starship.nix
-    ./distrobox.nix
+    ./direnv.nix
 
   ];
   home.packages = with pkgs; [
