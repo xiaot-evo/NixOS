@@ -150,6 +150,7 @@
         # 为特定程序设置全屏启动和透明度.
         matches = [
           { app-id = "zen"; }
+          { app-id = "code";}
         ];
         open-maximized = true;
         opacity = 0.95;

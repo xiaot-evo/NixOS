@@ -24,7 +24,8 @@
     resources
     splayer
     spotify
-    hmcl
+    # hmcl
+    prismlauncher
     qq
     wechat
     telegram-desktop
