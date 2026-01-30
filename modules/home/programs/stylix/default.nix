@@ -10,10 +10,10 @@
       enable = true;
       profileNames = [ "Default Profile" ];
     };
-    targets.fish.enable = false;
+    targets.fish.enable = true;
     targets.starship.enable = true;
-    targets.vscode = {
-      colors.enable = false;
-    };
+    # targets.vscode = {
+    #   colors.enable = false;
+    # };
   };
 }

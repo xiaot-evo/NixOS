@@ -2,7 +2,7 @@
 {
   programs.vscode.profiles.default = {
     userSettings = {
-      "workbench.colorTheme" = lib.mkForce "GitHub Light";
+      # "workbench.colorTheme" = lib.mkForce "GitHub Light";
       "workbench.iconTheme" = "vscode-icons";
       "terminal.integrated.defaultProfile.linux" = "fish";
       "terminal.integrated.profiles.linux" = {

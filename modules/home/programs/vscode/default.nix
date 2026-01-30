@@ -14,7 +14,6 @@
       vscode-icons-team.vscode-icons
       gruntfuggly.todo-tree
       oderwat.indent-rainbow
-      github.github-vscode-theme
       alefragnani.project-manager
     ];
   };
