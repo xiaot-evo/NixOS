@@ -2,7 +2,7 @@
   programs.noctalia-shell.settings = {
     settingsVersion = 0;
     bar = {
-      barType = "framed";
+      barType = "simple";
       position = "top";
       monitors = [ ];
       density = "default";
@@ -16,7 +16,7 @@
       marginHorizontal = 4;
       frameThickness = 8;
       frameRadius = 12;
-      outerCorners = true;
+      outerCorners = false;
       exclusive = true;
       hideOnOverview = false;
       widgets = {
@@ -58,7 +58,7 @@
       screenOverrides = [ ];
     };
     general = {
-      avatarImage = "";
+      avatarImage = "~/.face";
       dimmerOpacity = 0.2;
       showScreenCorners = false;
       forceBlackScreenCorners = false;

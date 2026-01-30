@@ -11,5 +11,8 @@
       profileNames = [ "Default Profile" ];
     };
     targets.starship.enable = true;
+    targets.vscode = {
+      colors.enable = false;
+    };
   };
 }
