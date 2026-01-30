@@ -3,6 +3,7 @@
   programs.vscode.profiles.default = {
     userSettings = {
       "workbench.colorTheme" = lib.mkForce "Default Light Modern";
+      "workbench.iconTheme" = "vscode-icons";
       "terminal.integrated.defaultProfile.linux" = "fish";
       "terminal.integrated.profiles.linux" = {
         fish = {
@@ -27,7 +28,7 @@
               "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").homeConfigurations.<name>.options";
             };
             "nix-darwin" = {
-              "expr" = "(builtins.getFlake \"${workspaceFolder}/path/to/flake\").darwinConfigurations.<name>.options";
+              "expr" = "(builtins.getFlake \"/absolute/path/to/flake\").darwinConfigurations.<name>.options";
             };
           };
         };
