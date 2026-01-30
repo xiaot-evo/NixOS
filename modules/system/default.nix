@@ -8,4 +8,5 @@
     ./desktop/niri
     ./apps
   ];
+  # TODO 重构目录结构
 }

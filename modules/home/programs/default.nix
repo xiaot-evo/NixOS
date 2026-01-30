@@ -31,5 +31,6 @@
     telegram-desktop
     readest
     wpsoffice-cn
+    obs-studio
   ];
 }

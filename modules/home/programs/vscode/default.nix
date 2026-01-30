@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 {
   imports = [ ./settings.nix ];
+  #TODO 独立vscode环境 
   home.packages = with pkgs; [
     nixd
     nixfmt
@@ -15,6 +16,9 @@
       jnoortheen.nix-ide
       christian-kohler.path-intellisense
       vscode-icons-team.vscode-icons
+      gruntfuggly.todo-tree
+      oderwat.indent-rainbow
+      github.github-vscode-theme
     ];
   };
 }

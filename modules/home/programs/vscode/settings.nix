@@ -2,7 +2,7 @@
 {
   programs.vscode.profiles.default = {
     userSettings = {
-      "workbench.colorTheme" = lib.mkForce "Default Light Modern";
+      "workbench.colorTheme" = lib.mkForce "GitHub Light";
       "workbench.iconTheme" = "vscode-icons";
       "terminal.integrated.defaultProfile.linux" = "fish";
       "terminal.integrated.profiles.linux" = {
@@ -11,7 +11,6 @@
         };
       };
       ## NIX IDE
-
       # Enable Nix language server via nixd
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
