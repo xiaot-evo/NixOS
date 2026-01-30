@@ -5,6 +5,13 @@
   ...
 }:
 {
+  # services.displayManager.ly = {
+  #   enable = true;
+  #   package = pkgs.ly;
+  #   # settings = {
+
+  #   # };
+  # };
   services.greetd = {
     enable = true;
     settings = {

@@ -3,9 +3,8 @@
   imports = [
     ./nh.nix
     ./stylix
-    # ./nushell.nix
     ./helix
-    ./vscode.nix
+    ./vscode
     ./ghostty.nix
     ./zen-browser.nix
     # ./zed-editor.nix
@@ -26,7 +25,6 @@
     resources
     splayer
     spotify
-    # prismlauncher
     hmcl
     qq
     wechat

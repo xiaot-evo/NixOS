@@ -11,13 +11,13 @@
     ./settings.nix
     ./plugins.nix
   ];
+  home.packages = with pkgs; [
+    app2unit
+  ];
 
-  # systemd.user.services.noctalia-shell.Service.Environment = lib.mkAfter [
-  #   "QT_QPA_PLATFORMTHEME=qt6ct"
-  #   "QT_QPA_PLATFORM=wayland;xcb"
-  #   "QT_AUTO_SCREEN_SCALE_FACTOR=1"
-  #   "QS_ICON_THEME=Papirus"
-  # ];
+  systemd.user.services.noctalia-shell.Service.Environment = lib.mkAfter [
+    "NIXOS_OZONE_WL=1"
+  ];
 
   # configure options
   programs.noctalia-shell = {

@@ -173,7 +173,7 @@
       clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
       position = "center";
       pinnedApps = [ ];
-      useApp2Unit = false;
+      useApp2Unit = true;
       sortByMostUsed = true;
       terminalCommand = "ghostty -e";
       customLaunchPrefixEnabled = false;

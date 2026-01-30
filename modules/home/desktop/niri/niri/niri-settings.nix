@@ -9,21 +9,15 @@
   programs.niri.settings = {
     spawn-at-startup = [
       # {
-      # command = [ "${lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}" ];
+      #   command = [ "${lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}" ];
       # }
       { command = [ "${pkgs.fcitx5}/usr/bin/fcitx5" ]; }
       # { command = [ "${pkgs.ibus}/bin/ibus start" ]; }
-      # { command = [ "${lib.getExe pkgs.clash-verge-rev}" ]; }
     ];
-    environment = {
-      NIXOS_OZONE_WL = "1";
-      # QT_QPA_PLATFORM = "wayland";
-      # ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      # GTK-IM-MODULE = "fcitx";
-      # QT_IM_MODULES = "wayland;fcitx";
-      # QT_IM_MODULE = "fcitx";
-      EDITOR = "hx";
-    };
+    # environment = {
+    #   NIXOS_OZONE_WL = "1";
+    #   EDITOR = "hx";
+    # };
     outputs = {
       "eDP-1" = {
         scale = 1.0;

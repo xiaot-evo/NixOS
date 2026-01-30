@@ -10,6 +10,7 @@
       enable = true;
       profileNames = [ "Default Profile" ];
     };
+    targets.fish.enable = false;
     targets.starship.enable = true;
     targets.vscode = {
       colors.enable = false;
