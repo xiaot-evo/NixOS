@@ -5,6 +5,7 @@
     # defaultEditor = true;
     extraPackages = with pkgs; [
       nixd
+      nixfmt
       # go
       gopls
       delve

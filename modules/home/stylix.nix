@@ -1,5 +1,5 @@
 {
-  imports = [ ./stylix.nix ];
+  imports = [ ../stylix ];
   stylix = {
     targets.niri.enable = true;
     targets.ghostty.enable = true;

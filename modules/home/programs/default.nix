@@ -2,7 +2,7 @@
 {
   imports = [
     ./nh.nix
-    ./stylix
+    ./stylix.nix
     ./helix
     ./vscode
     ./ghostty.nix
