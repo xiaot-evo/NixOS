@@ -11,6 +11,7 @@
     # ./virtualbox.nix
   ];
   environment.defaultPackages = with pkgs; [
+    home-manager
     vim
     wget
     tree

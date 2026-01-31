@@ -4,6 +4,7 @@
     userSettings = {
       # "workbench.colorTheme" = lib.mkForce "GitHub Light";
       "workbench.iconTheme" = "vscode-icons";
+      "editor.cursorSmoothCaretAnimation" = "on";
       "terminal.integrated.environmentChangesRelaunch" = true;
       "terminal.integrated.defaultProfile.linux" = "fish";
       "terminal.integrated.profiles.linux" = {
