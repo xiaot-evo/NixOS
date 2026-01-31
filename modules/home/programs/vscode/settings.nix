@@ -4,6 +4,7 @@
     userSettings = {
       # "workbench.colorTheme" = lib.mkForce "GitHub Light";
       "workbench.iconTheme" = "vscode-icons";
+      "terminal.integrated.environmentChangesRelaunch" = true;
       "terminal.integrated.defaultProfile.linux" = "fish";
       "terminal.integrated.profiles.linux" = {
         fish = {
@@ -36,7 +37,7 @@
         "textDocument/definition"
       ];
       ## direnv
-      "direnv.restart.automatic" = true; 
+      "direnv.restart.automatic" = true;
       ## VSCodeVim
       "vim.easymotion" = true;
       "vim.incsearch" = true;
