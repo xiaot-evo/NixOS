@@ -35,6 +35,8 @@
       "nix.hiddenLanguageServerErrors" = [
         "textDocument/definition"
       ];
+      ## direnv
+      "direnv.restart.automatic" = false;
       ## VSCodeVim
       "vim.easymotion" = true;
       "vim.incsearch" = true;

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [ ./settings.nix ];
   home.packages = with pkgs; [
@@ -8,17 +8,35 @@
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      ms-ceintl.vscode-language-pack-zh-hans
-      github.copilot
-      github.copilot-chat
-      vscodevim.vim
-      jnoortheen.nix-ide
-      mkhl.direnv
-      christian-kohler.path-intellisense
+      ## apperance
+      # theme
+      # icons
       vscode-icons-team.vscode-icons
-      gruntfuggly.todo-tree
-      oderwat.indent-rainbow
+
+      ## tools
+      # i18n
+      ms-ceintl.vscode-language-pack-zh-hans
+      # project
       alefragnani.project-manager
+      gruntfuggly.todo-tree
+      # edit
+      christian-kohler.path-intellisense
+      oderwat.indent-rainbow
+      vscodevim.vim
+      # environment
+      mkhl.direnv
+      # ai
+      github.copilot-chat
+      github.copilot
+
+
+      ## language support
+      # nix
+      jnoortheen.nix-ide
+      # golang
+      golang.go
+      # javascript/typescript
+      # oven.bun-vscode
     ];
   };
 }
