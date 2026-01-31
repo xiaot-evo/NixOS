@@ -36,7 +36,7 @@
         "textDocument/definition"
       ];
       ## direnv
-      "direnv.restart.automatic" = false;
+      "direnv.restart.automatic" = true; 
       ## VSCodeVim
       "vim.easymotion" = true;
       "vim.incsearch" = true;
