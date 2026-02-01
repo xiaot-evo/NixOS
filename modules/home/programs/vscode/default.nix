@@ -1,12 +1,19 @@
 { pkgs, ... }:
 {
   imports = [ ./settings.nix ];
-  home.packages = with pkgs; [
-    nixd
-    nixfmt
-  ];
+  # home.packages = with pkgs; [
+  #   nixd
+  #   nixfmt
+  # ];
   programs.vscode = {
     enable = true;
+    package = pkgs.vscode.fhsWithPackages (
+      ps: with ps; [
+        nixd
+        nixfmt
+      ]
+    );
+    mutableExtensionsDir = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       ## apperance
       # theme
@@ -26,9 +33,8 @@
       # environment
       mkhl.direnv
       # ai
-      github.copilot-chat
-      github.copilot
-
+      # github.copilot-chat
+      # github.copilot
 
       ## language support
       # nix
