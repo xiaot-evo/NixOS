@@ -11,7 +11,7 @@
       # {
       #   command = [ "${lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}" ];
       # }
-      { command = [ "${pkgs.fcitx5}/usr/bin/fcitx5" ]; }
+      { command = [ "${pkgs.fcitx5}/usr/bin/fcitx5 -d" ]; }
       # { command = [ "${pkgs.ibus}/bin/ibus start" ]; }
     ];
     # environment = {
@@ -168,7 +168,7 @@
         # 窗口圆角设置.
         geometry-corner-radius =
           let
-            r = 12.0;
+            r = 15.0;
           in
           {
             top-left = r;
