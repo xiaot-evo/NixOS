@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/cattppuccin-frappe.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
     # image = pkgs.fetchurl {
     #   url = "https://b.zhutix.com/bizhi/follow_me/03.jpg";
     #   sha256 =
