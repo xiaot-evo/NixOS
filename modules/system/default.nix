@@ -1,7 +1,7 @@
 {
   imports = [
     ./displaymanager.nix
-    ./virtualisation.nix
+    # ./virtualisation.nix
     ./fonts.nix
 
     # ./desktop/gnome

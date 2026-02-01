@@ -4,7 +4,6 @@
     ./nbfc-linux.nix
     ./daed.nix
     # ./steam.nix
-    # ./nushell.nix
     # ./gamemode.nix
     # ./localsend.nix
     # ./virt-manager.nix
