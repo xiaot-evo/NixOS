@@ -1,7 +1,7 @@
 {
   imports = [
     ./helix.nix
-    # ./languages.nix
+    ./languages.nix
     ./settings.nix
   ];
 }
