@@ -337,7 +337,7 @@
         criticalSoundFile = "";
         normalSoundFile = "";
         lowSoundFile = "";
-        excludedApps = "discord,firefox,chrome,chromium,edge,zen,qq";
+        excludedApps = "discord,firefox,chrome,chromium,edge,zen,QQ";
       };
       enableMediaToast = false;
     };

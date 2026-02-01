@@ -5,7 +5,7 @@
     ./helix
     ./vscode
     ./ghostty.nix
-    ./zed-editor.nix
+    ./zed-editor
     ./zen-browser.nix
     ./fish.nix
     ./starship.nix
