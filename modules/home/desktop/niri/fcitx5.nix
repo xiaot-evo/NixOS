@@ -9,4 +9,9 @@
       (fcitx5-rime.override { rimeDataPkgs = [ pkgs.rime-ice ]; })
     ];
   };
+  # rime-ice patch
+  home.file.".local/share/fcitx5/rime/default.custom.yaml".text = ''
+    patch:
+      __include: rime_ice_suggestion:/
+  '';
 }
