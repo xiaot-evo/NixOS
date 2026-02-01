@@ -5,6 +5,7 @@
     ./helix
     ./vscode
     ./ghostty.nix
+    ./zed-editor.nix
     ./zen-browser.nix
     ./fish.nix
     ./starship.nix
@@ -22,7 +23,6 @@
     bilibili
     resources
     splayer
-    spotify
     # hmcl
     prismlauncher
     qq
