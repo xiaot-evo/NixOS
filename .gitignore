@@ -1,0 +1,20 @@
+# Editor and IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Nix build artifacts
+result
+result-*
+*.sw
+*.o
+
+# Local files
+OPTIMIZATION.md
+*.local
+
+# System files
+.DS_Store
+Thumbs.db
