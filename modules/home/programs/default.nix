@@ -3,7 +3,6 @@
   imports = [
     ./nh.nix
     ./helix
-    ./vscode
     ./ghostty.nix
     ./zed-editor
     ./zen-browser.nix
@@ -11,6 +10,8 @@
     ./starship.nix
     ./direnv.nix
 
+    ## AI
+    ./open-code.nix
   ];
   home.packages = with pkgs; [
     ## cmd

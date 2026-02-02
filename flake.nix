@@ -2,6 +2,7 @@
   description = "XiaoT_Evo's NixOS Profile";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs?ref=master";
     # nixpkgs.url = "github:nixos/nixpkgs";
     # nixpkgs.url =
     #   "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
@@ -21,10 +22,6 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
     };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake/beta";
@@ -54,15 +51,25 @@
           allowBroken = true;
         };
       };
+      pkgs-master = import inputs.nixpkgs-master {
+        inherit system;
+        config = {
+          allowUnfree = true;
+          allowBroken = true;
+        };
+      };
     in
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs pkgs-master;
+          };
           modules = [
             ./hosts/laptop-acer
             inputs.niri.nixosModules.niri
+            inputs.stylix.nixosModules.stylix
             inputs.daeuniverse.nixosModules.dae
             inputs.daeuniverse.nixosModules.daed
           ];
@@ -81,7 +88,9 @@
           ];
           # Optionally use extraSpecialArgs
           # to pass through arguments to home.nix
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit inputs pkgs-master;
+          };
         };
       };
     };
