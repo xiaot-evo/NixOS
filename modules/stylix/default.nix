@@ -28,11 +28,11 @@
       };
       sansSerif = {
         package = pkgs.lxgw-wenkai;
-        name = "霞鹜文楷 Medium";
+        name = "LXGW WenKai";
       };
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.maple-mono.NF-CN;
+        name = "Maple Mono NF CN";
       };
       emoji = {
         package = pkgs.noto-fonts-color-emoji;

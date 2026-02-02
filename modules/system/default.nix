@@ -3,6 +3,7 @@
     ./displaymanager.nix
     # ./virtualisation.nix
     ./fonts.nix
+    ./stylix.nix
 
     # ./desktop/gnome
     ./desktop/niri
