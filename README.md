@@ -1,51 +1,119 @@
-# NixOS 配置（flake）
+# XiaoT_Evo's NixOS Configuration
 
-这是个人的 NixOS 配置仓库，基于 Nix flakes 组织。用于管理系统配置、用户配置（home-manager）以及可复用的模块与程序设置。
+这是一个个人的 NixOS 配置仓库，使用 Nix Flakes 架构管理完整的系统和用户环境配置。该配置针对 Acer 笔记本电脑进行了优化，支持 NVIDIA 显卡和 Niri 窗口管理器。
 
-**项目结构概览**
-- `hosts/`: 主机特定配置（例如 laptop-acer）
-- `modules/`: 可复用的系统与用户模块（programs、home、system 等）
-- `overlays/`: Nix 包覆盖
-- `flake.nix`, `devenv.nix`, `devenv.yaml`: flakes 与开发环境配置
+## 🚀 特性
 
-**快速开始（先决条件）**
-- 已安装 Nix，并启用 flakes 支持（Nix >= 2.4 推荐）
-- 了解基础的 NixOS 与 flakes 使用方法
+- **现代桌面环境**: 基于 Niri 窗口管理器的 Wayland 桌面环境
+- **主题统一**: 使用 Stylix 实现跨应用的主题一致性
+- **硬件支持**: 完整的 NVIDIA 显卡支持（包括 PRIME Offload）
+- **AMD 平台**: 针对 AMD CPU 和 GPU 的优化配置
+- **模块化设计**: 清晰的模块化配置结构，易于维护和扩展
 
-**常用命令**
+## 📁 项目结构
 
-更新 flakes 依赖：
+```
+.
+├── flake.nix               # 主 flake 配置文件
+├── README.md              # 项目说明文档
+├── hosts/                 # 主机特定配置
+│   └── laptop-acer/       # Acer 笔记本配置
+│       ├── default.nix    # 主系统配置
+│       ├── hardware.nix   # 硬件配置（自动生成）
+│       ├── nvidia.nix     # NVIDIA 显卡配置
+│       └── users/         # 用户配置
+├── modules/               # 可重用模块
+│   ├── home/              # Home Manager 模块
+│   ├── stylix/            # Stylix 主题配置
+│   └── system/            # 系统级模块
+└── overlays/              # Nix 包覆盖
+```
+
+## ⚙️ 技术栈
+
+- **NixOS**: 声明式 Linux 发行版
+- **Nix Flakes**: 现代化的包管理和构建工具
+- **Home Manager**: 用户环境配置管理
+- **Niri**: 基于 Wayland 的平铺式窗口管理器
+- **Stylix**: 统一主题配置系统
+- **NVIDIA Drivers**: 专有显卡驱动支持
+- **PipeWire**: 音频服务管理
+- **systemd-boot**: 启动加载器
+
+## 🛠️ 安装与使用
+
+### 克隆仓库
 
 ```bash
+git clone https://github.com/XiaoT_Evo/NixOS-config.git
+cd NixOS-config
+```
+
+### 切换到新配置
+
+```bash
+# 应用系统配置（需要管理员权限）
+sudo nixos-rebuild switch --flake .#nixos
+
+# 应用用户配置
+home-manager switch --flake .#xiaot_evo
+```
+
+### 更新依赖
+
+```bash
+# 更新所有 flake 输入
 nix flake update
 ```
 
-将某个主机切换到本仓库配置（以 `laptop-acer` 为例）：
+## 💻 主要配置详情
 
-```bash
-sudo nixos-rebuild switch --flake .#laptop-acer
-```
+### 系统配置 (hosts/laptop-acer/)
+- 使用 systemd-boot EFI 启动加载器
+- 启用 Plymouth 开机动画
+- 静默启动参数优化
+- 最新内核支持
+- 中国时区设置 (Asia/Shanghai)
+- 中文本地化支持
 
-如果使用独立的 home-manager：
+### 硬件配置 (hardware.nix)
+- 自动检测的硬件配置
+- NVMe SSD 支持
+- Btrfs 文件系统（带压缩）
+- 交换分区配置
 
-```bash
-home-manager switch --flake .#<username>
-```
+### NVIDIA 显卡配置 (nvidia.nix)
+- NVIDIA 和 AMD GPU PRIME Offload 支持
+- 开源内核模块支持
+- 电源管理优化
+- 性能模式配置
 
-或通过 NixOS 的 integration：
+### 桌面环境 (modules/system/desktop/niri/)
+- Niri 窗口管理器
+- PipeWire 音频系统
+- 蓝牙支持
+- 打印服务
 
-```bash
-sudo nixos-rebuild switch --flake .#<host>
-```
+### 主题配置 (modules/home/stylix.nix)
+- 全系统主题一致性
+- 支持 Niri、GTK、QT、浏览器等应用
+- 终端和 Shell 主题
 
-**如何定制**
-- 修改主机配置：编辑 `hosts/<host>/default.nix`（例如 `hosts/laptop-acer/default.nix`）。
-- 修改或添加模块：在 `modules/` 下新增或修改对应的模块（例如 `modules/home/` 或 `modules/system/`）。
-- 更新或添加程序设置：查看 `modules/programs/` 目录并按照已有样式添加配置。
+## 🔧 自定义配置
 
-**贡献指南**
-- 提交 issue 说明要改进或遇到的问题。
-- 提交 PR 时，请在提交说明里写明变更的目的与影响范围。
+### 添加新程序
+在 `modules/programs/` 目录下添加新的程序配置，然后在相应的 `default.nix` 文件中导入。
 
-**许可证**
-此仓库采用 MIT 许可证（如果需要其他许可，请根据需求修改）。
+### 修改用户配置
+编辑 `hosts/laptop-acer/users/xiaot_evo.nix` 文件来修改用户特定设置。
+
+### 更改主题
+修改 `modules/stylix/` 目录下的主题配置文件。
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request 来改进此配置！
+
+## 📄 许可证
+
+MIT License

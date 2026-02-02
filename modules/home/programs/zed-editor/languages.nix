@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.zed-editor.userSettings = {
     languages = {
@@ -6,12 +7,12 @@
           "nixd"
           "!nil"
         ];
-        formatter = {
-          external = {
-            command = "nixfmt";
-            arguments = [ "--quiet" ];
-          };
-        };
+        # formatter = {
+        #   external = {
+        #     command = "nixfmt";
+        #     arguments = [ "--quiet" ];
+        #   };
+        # };
       };
     };
     lsp = {
@@ -19,7 +20,7 @@
         # initialization_options = {
         #   formatting = {
         #     command = [
-        #       "nixfmt"
+        #       "${pkgs.nixfmt}/bin/nixfmt"
         #     ];
         #   };
         # };
