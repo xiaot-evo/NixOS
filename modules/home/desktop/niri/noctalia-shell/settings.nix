@@ -37,7 +37,12 @@
           { id = "ActiveWindow"; }
         ];
         center = [
-          { id = "Clock"; }
+          {
+            id = "Clock";
+            formatHorizontal = "HH:mm ddd MMM dd";
+            formatVertical = "HH mm - dd MM";
+            tooltipFormat = "HH:mm ddd MMM dd";
+          }
           { id = "MediaMini"; }
         ];
         right = [
@@ -46,8 +51,8 @@
             "drawerEnabled" = false;
           }
           { id = "SystemMonitor"; }
-          { id = "ScreenRecorder"; }
           { id = "NotificationHistory"; }
+          { id = "plugin:screen-recorder"; }
           { id = "Volume"; }
           { id = "Brightness"; }
           {
