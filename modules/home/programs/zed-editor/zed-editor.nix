@@ -13,6 +13,8 @@
       "nix"
       "git-firefly"
     ];
-    userSettings = import ./settings.nix { inherit pkgs lib; };
+    userSettings =
+      (import ./settings.nix { inherit pkgs lib; }) // (import ./languages.nix { inherit pkgs; });
+    userKeymaps = import ./keymap.nix;
   };
 }

@@ -37,5 +37,7 @@
   };
 
   # 保存时格式化
+  format_on_save = "on";
+  # Helox Mode
   helix_mode = true;
 }
