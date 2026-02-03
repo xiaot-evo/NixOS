@@ -2,6 +2,7 @@
   imports = [
     ./displaymanager.nix
     # ./virtualisation.nix
+    ./printing.nix
     ./fonts.nix
     ./stylix.nix
 
