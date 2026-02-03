@@ -19,6 +19,10 @@
       outerCorners = false;
       exclusive = true;
       hideOnOverview = false;
+      # New features
+      displayMode = "always_visible";
+      autoHideDelay = 500;
+      autoShowDelay = 150;
       widgets = {
         left = [
           {
@@ -145,6 +149,8 @@
       useSolidColor = false;
       solidColor = "#1a1a2e";
       randomEnabled = false;
+      # New features
+      automationEnabled = false;
       wallpaperChangeMode = "random";
       randomIntervalSec = 300;
       transitionDuration = 1500;
@@ -152,6 +158,8 @@
       transitionEdgeSmoothness = 5.0e-2;
       panelPosition = "follow_bar";
       hideWallpaperFilenames = false;
+      # New features
+      sortOrder = "name";
       useWallhaven = false;
       wallhavenQuery = "";
       wallhavenSorting = "relevance";
@@ -173,7 +181,7 @@
       clipboardWatchImageCommand = "wl-paste --type image --watch cliphist store";
       position = "center";
       pinnedApps = [ ];
-      useApp2Unit = true;
+      useApp2Unit = false;
       sortByMostUsed = true;
       terminalCommand = "ghostty -e";
       customLaunchPrefixEnabled = false;
@@ -183,6 +191,8 @@
       iconMode = "tabler";
       showIconBackground = true;
       enableSettingsSearch = true;
+      # New feature
+      enableWindowsSearch = true;
       ignoreMouseInput = false;
       screenshotAnnotationTool = "";
     };
@@ -243,6 +253,9 @@
       swapCriticalThreshold = 90;
       diskWarningThreshold = 80;
       diskCriticalThreshold = 90;
+      # New features
+      diskAvailWarningThreshold = 20;
+      diskAvailCriticalThreshold = 10;
       cpuPollingInterval = 3000;
       tempPollingInterval = 3000;
       gpuPollingInterval = 3000;
@@ -258,6 +271,8 @@
     };
     dock = {
       enabled = false;
+      # New feature
+      position = "bottom";
       displayMode = "auto_hide";
       # backgroundOpacity = 1;
       floatingRatio = 1;
@@ -356,11 +371,13 @@
     };
     audio = {
       volumeStep = 5;
-      volumeOverdrive = false;
+      volumeOverdrive = true;
       cavaFrameRate = 30;
       visualizerType = "linear";
       mprisBlacklist = [ ];
       preferredPlayer = "";
+      # New feature
+      volumeFeedback = true;
       externalMixer = "pwvucontrol || pavucontrol";
     };
     brightness = {

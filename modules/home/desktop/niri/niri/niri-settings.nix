@@ -12,12 +12,18 @@
       #   command = [ "${lib.getExe inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default}" ];
       # }
       { command = [ "${pkgs.fcitx5}/usr/bin/fcitx5 -d" ]; }
-      # { command = [ "${pkgs.ibus}/bin/ibus start" ]; }
     ];
-    # environment = {
-    #   NIXOS_OZONE_WL = "1";
-    #   EDITOR = "hx";
-    # };
+    environment = {
+      NIXOS_OZONE_WL = "1";
+    };
+    input = {
+      # 输入时禁用触摸板
+      # Disable touchpad while typing
+      touchpad = {
+        dwt = true;
+        natural-scroll = true;
+      };
+    };
     outputs = {
       "eDP-1" = {
         scale = 1.0;
@@ -150,7 +156,7 @@
         # 为特定程序设置全屏启动和透明度.
         matches = [
           { app-id = "zen"; }
-          { app-id = "code";}
+          { app-id = "code"; }
         ];
         open-maximized = true;
         opacity = 0.95;

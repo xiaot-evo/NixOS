@@ -1,6 +1,6 @@
 {
   imports = [
-    ./variables.nix
+    # ./variables.nix
     ./stylix.nix
 
     ./desktop/niri
