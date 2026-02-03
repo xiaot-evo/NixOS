@@ -15,6 +15,7 @@
     ];
     environment = {
       NIXOS_OZONE_WL = "1";
+      EDITOR = "hx";
     };
     input = {
       # 输入时禁用触摸板
