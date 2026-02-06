@@ -8,6 +8,7 @@
   imports = [
     ./hardware.nix
     ./nvidia.nix
+    ./nbfc-linux.nix
     ../../modules/system
   ];
 
@@ -27,6 +28,7 @@
 
     # Enable "Silent boot"
     consoleLogLevel = 3;
+    initrd.enable = true;
     initrd.verbose = false;
     kernelParams = [
       "quiet"
@@ -35,6 +37,11 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
       "drm.edid_firmware=eDP-1:edid/1080p80.bin"
+
+      "zswap.enabled=1" # enables zswap
+      "zswap.compressor=lz4" # compression algorithm
+      "zswap.max_pool_percent=20" # maximum percentage of RAM that zswap is allowed to use
+      "zswap.shrinker_enabled=1" # whether to shrink the pool proactively on high memory pressure
     ];
     # Hide the OS choice for bootloaders.
     # It's still possible to open the bootloader list by pressing any key

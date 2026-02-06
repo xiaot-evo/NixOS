@@ -1,5 +1,6 @@
 {
   imports = [
+    # ./firewall.nix
     ./displaymanager.nix
     # ./virtualisation.nix
     ./printing.nix

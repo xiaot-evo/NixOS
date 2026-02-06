@@ -11,7 +11,7 @@
     ./direnv.nix
 
     ## AI
-    ./open-code.nix
+    ./opencode.nix
   ];
   home.packages = with pkgs; [
     ## cmd

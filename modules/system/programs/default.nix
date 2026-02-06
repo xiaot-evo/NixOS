@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./nbfc-linux.nix
     ./daed.nix
     # ./steam.nix
     # ./gamemode.nix

@@ -10,8 +10,12 @@
       yaml-language-server
     ];
     extensions = [
+      "html"
       "nix"
       "git-firefly"
+      "toml"
+      "catppuccin"
+      "catppuccin-icons"
     ];
     userSettings =
       (import ./settings.nix { inherit pkgs lib; }) // (import ./languages.nix { inherit pkgs; });
