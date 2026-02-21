@@ -2,7 +2,7 @@
   imports = [
     # ./firewall.nix
     ./displaymanager.nix
-    # ./virtualisation.nix
+    ./virtualisation.nix
     ./printing.nix
     ./fonts.nix
     ./stylix.nix

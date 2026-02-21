@@ -37,11 +37,6 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
       "drm.edid_firmware=eDP-1:edid/1080p80.bin"
-
-      "zswap.enabled=1" # enables zswap
-      "zswap.compressor=lz4" # compression algorithm
-      "zswap.max_pool_percent=20" # maximum percentage of RAM that zswap is allowed to use
-      "zswap.shrinker_enabled=1" # whether to shrink the pool proactively on high memory pressure
     ];
     # Hide the OS choice for bootloaders.
     # It's still possible to open the bootloader list by pressing any key
@@ -150,14 +145,16 @@
       "nix-command"
       "flakes"
     ];
-    substituters = [
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      "https://nix-community.cachix.org"
-      "https://cache.nixos.org/"
-    ];
-    trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
+    # substituters = [
+    #   "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    #   "https://nix-community.cachix.org"
+    #   "https://cache.nixos.org/"
+    #   "https://cache.nixos-cuda.org"
+    # ];
+    # trusted-public-keys = [
+    #   "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    #   "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+    # ];
     trusted-users = [
       "root"
       "xiaot_evo"

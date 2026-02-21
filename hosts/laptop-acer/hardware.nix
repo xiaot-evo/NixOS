@@ -52,6 +52,14 @@
       "compress=zstd"
     ];
   };
+  fileSystems."/swap" = {
+    device = "/dev/disk/by-uuid/b6f4d613-c06d-4de2-a366-b2673e9fff2a";
+    fsType = "btrfs";
+    options = [
+      "subvol=swap"
+      "noatime"
+    ];
+  };
 
   fileSystems."/boot/efi" = {
     device = "/dev/disk/by-uuid/7556-B936";
@@ -65,8 +73,8 @@
   swapDevices = [
     { device = "/dev/disk/by-uuid/02c045d1-239d-411b-a7c8-7545b32673d1"; }
     {
-      device = "/var/lib/swapfile";
-      size = 64 * 1024;
+      device = "/swap/swapfile";
+      size = 32 * 1024;
     }
   ];
 
@@ -78,6 +86,6 @@
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  # powerManagement.cpuFreqGoveror = lib.mkDefault "powersave";
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -1,8 +1,8 @@
-{ pkgs-master, ... }:
+{ pkgs, ... }:
 {
   programs.opencode = {
     enable = true;
-    package = pkgs-master.opencode;
+    package = pkgs.opencode;
     settings = {
       # theme = "opencode";
       # model = "anthropic/claude-sonnet-4-20250514";
