@@ -13,7 +13,7 @@
       source-han-sans
       source-han-serif
       nerd-fonts.jetbrains-mono
-      jetbrains-mono
+      # jetbrains-mono
       maple-mono.NF-CN
     ];
     fontDir.enable = true;
