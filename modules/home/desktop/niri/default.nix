@@ -3,7 +3,7 @@
   imports = [
     ./niri
     ./noctalia-shell
-    ./swayidle.nix
+    # ./swayidle.nix
     ./fcitx5.nix
   ];
 }
