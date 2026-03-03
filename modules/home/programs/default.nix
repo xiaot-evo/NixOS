@@ -9,6 +9,7 @@
     ./fish.nix
     ./starship.nix
     ./direnv.nix
+    ./distrobox.nix
 
     ## AI
     ./opencode.nix
