@@ -492,10 +492,10 @@
       autoUpdate = false;
     };
     idle = {
-      enabled = false;
-      screenOffTimeout = 600;
-      lockTimeout = 660;
-      suspendTimeout = 1800;
+      enabled = true;
+      screenOffTimeout = 300;
+      lockTimeout = 330;
+      suspendTimeout = 600;
       fadeDuration = 5;
       screenOffCommand = "";
       lockCommand = "";
