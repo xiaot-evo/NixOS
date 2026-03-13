@@ -1,6 +1,6 @@
 {
   imports = [
-    ./stylix.nix
+    # ./stylix.nix
 
     ./desktop/niri
     ./programs

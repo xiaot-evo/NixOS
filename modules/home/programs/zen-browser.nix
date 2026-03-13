@@ -7,13 +7,12 @@
 }:
 {
   imports = [
-    inputs.zen-browser.homeModules.beta
+    inputs.zen-browser.homeModules.default
     # or inputs.zen-browser.homeModules.twilight
     # or inputs.zen-browser.homeModules.twilight-official
   ];
   programs.zen-browser.enable = true;
   programs.zen-browser.nativeMessagingHosts = [ pkgs.firefoxpwa ];
-  programs.zen-browser.suppressXdgMigrationWarning = true;
   programs.zen-browser.policies =
     let
       mkExtensionSettings = builtins.mapAttrs (
@@ -36,7 +35,7 @@
     let
       value =
         let
-          zen-browser = inputs.zen-browser.packages.${system}.beta; # or twilight
+          zen-browser = inputs.zen-browser.packages.${system}.default; # or twilight
         in
         zen-browser.meta.desktopFileName;
 

@@ -4,6 +4,7 @@
     ./nh.nix
     ./helix
     ./ghostty.nix
+    ./kdeconnect.nix
     ./zed-editor
     ./zen-browser.nix
     ./fish.nix
@@ -15,6 +16,13 @@
     ./opencode.nix
   ];
   home.packages = with pkgs; [
+    ## extra
+    bibata-cursors
+    tela-circle-icon-theme
+    libadwaita
+    adw-gtk3
+    qt6Packages.qt6ct
+
     ## cmd
     fastfetch
     devenv

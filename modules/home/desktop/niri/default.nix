@@ -2,8 +2,8 @@
 {
   imports = [
     ./niri
-    ./noctalia-shell
-    # ./swayidle.nix
+    # ./noctalia-shell
+    ./dms-shell
     ./fcitx5.nix
   ];
 }

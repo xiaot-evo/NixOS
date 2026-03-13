@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ./niri-settings.nix
+    ./settings.nix
   ];
 
   programs.niri = {

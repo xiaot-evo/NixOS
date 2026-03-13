@@ -1,39 +1,46 @@
 {
   description = "XiaoT_Evo's NixOS Profile";
-  nixConfig = {
-    extra-substituters = [
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      "https://nix-community.cachix.org"
-      "https://cache.nixos.org"
-      "https://cache.nixos-cuda.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
-    ];
+  # nixConfig = {
+  #   extra-substituters = [
+  #     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+  #     "https://nix-community.cachix.org"
+  #     "https://cache.nixos.org"
+  #     "https://cache.nixos-cuda.org"
+  #   ];
+  #   extra-trusted-public-keys = [
+  #     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  #     "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+  #   ];
 
-  };
+  # };
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     # nixpkgs-master.url = "github:nixos/nixpkgs?ref=master";
     # nixpkgs.url = "github:nixos/nixpkgs";
-    # nixpkgs.url =
-    #   "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
+    nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     daeuniverse.url = "github:daeuniverse/flake.nix";
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # stylix = {
+    #   url = "github:nix-community/stylix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms-plugin-registry = {
+      url = "github:AvengeMedia/dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
@@ -82,7 +89,6 @@
           modules = [
             ./hosts/laptop-acer
             inputs.niri.nixosModules.niri
-            inputs.stylix.nixosModules.stylix
             inputs.daeuniverse.nixosModules.dae
             inputs.daeuniverse.nixosModules.daed
           ];
@@ -96,8 +102,6 @@
           modules = [
             ./hosts/laptop-acer/users/xiaot_evo.nix
             inputs.niri.homeModules.niri
-            inputs.niri.homeModules.stylix
-            inputs.stylix.homeModules.stylix
           ];
           # Optionally use extraSpecialArgs
           # to pass through arguments to home.nix

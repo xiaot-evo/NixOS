@@ -8,6 +8,7 @@
   # import the home manager module
   imports = [
     inputs.noctalia.homeModules.default
+    ./niri.nix
     ./settings.nix
     ./plugins.nix
   ];

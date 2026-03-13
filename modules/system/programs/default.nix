@@ -5,7 +5,7 @@
     # ./steam.nix
     # ./gamemode.nix
     # ./localsend.nix
-    ./virt-manager.nix
+    # ./virt-manager.nix
     # ./virtualbox.nix
   ];
   environment.defaultPackages = with pkgs; [
