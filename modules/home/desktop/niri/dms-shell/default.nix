@@ -12,9 +12,6 @@
     ./niri.nix
     ./apptheme
   ];
-  systemd.user.services.niri-flake-polkit = lib.mkForce {
-    enable = false;
-  }; # Disable niri-flake's default polkit agent to avoid conflicts
   programs.dank-material-shell = {
     enable = true;
     # quickshell.package = inputs.quickshell.packages.${pkgs.hostPlatform.system}.default;
