@@ -68,7 +68,7 @@
         inherit system;
         config = {
           allowUnfree = true;
-          allowBroken = true;
+          # allowBroken = true;
         };
       };
       # pkgs-master = import inputs.nixpkgs-master {

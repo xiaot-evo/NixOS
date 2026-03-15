@@ -1,7 +1,7 @@
 {
   programs.git = {
     enable = true;
-    userName = "XiaoT_Evo";
+    userName = "xiaot-evo";
     userEmail = "3258412091@qq.com";
   };
 }
